@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pizza Web App</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="scripts/function.js"></script> -->
+</head>
+<body>
+    <div class="container">        
+        <div class="row">
+            <!-- <div class="col-md-4">
+                <figure class="card card-product">
+                    <div class="img-wrap"><img src="images/pizza_one.jpg"></div>
+                    <figcaption class="info-wrap">
+                            <h4 class="title">Another name of item</h4>
+                            <p class="desc">Some small description goes here</p>
+                            <div class="rating-wrap">
+                                <div class="label-rating">132 reviews</div>
+                                <div class="label-order">154 orders </div>
+                            </div>
+                    </figcaption>
+                    <div class="bottom-wrap">
+                        <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>	
+                        <div class="price-wrap h5">
+                            <span class="price-new">$1280</span> <del class="price-old">$1980</del>
+                        </div> 
+                    </div> 
+                </figure>
+            </div> 
+            <div class="col-md-4">
+                <figure class="card card-product">
+                    <div class="img-wrap"><img src="images/pizza_two.jpg"> </div>
+                    <figcaption class="info-wrap">
+                            <h4 class="title">Good product</h4>
+                            <p class="desc">Some small description goes here</p>
+                            <div class="rating-wrap">
+                                <div class="label-rating">132 reviews</div>
+                                <div class="label-order">154 orders </div>
+                            </div> 
+                    </figcaption>
+                    <div class="bottom-wrap">
+                            <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>	
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span> <del class="price-old">$1980</del>
+                            </div>
+                    </div> 
+                </figure>
+            </div> 
+            <div class="col-md-4">
+                <figure class="card card-product">
+                    <div class="img-wrap"><img src="images/pizza_three.jpg"></div>
+                    <figcaption class="info-wrap">
+                            <h4 class="title">Product name goes here</h4>
+                            <p class="desc">Some small description goes here</p>
+                            <div class="rating-wrap">
+                                <div class="label-rating">132 reviews</div>
+                                <div class="label-rating">154 orders </div>
+                            </div> 
+                    </figcaption>
+                    <div class="bottom-wrap">
+                            <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>	
+                            <div class="price-wrap h5">
+                                <span class="price-new">$1280</span> <del class="price-old">$1980</del>
+                            </div>
+                    </div>
+                </figure>
+            </div>  -->
+        </div>   
+    </div> 
+      <script>
+      $(function(){
+
+$.ajax({
+    url:"scripts/pizza.json",
+    type:"get",
+    success:function(res){
+       console.log(res);
+       addItem(res);
+    }
+})
+
+function addItem(res){
+    $.each( res, function( key, value ) {
+            var pizzaDetails = `<div class="col-md-4">
+            <figure class="card card-product">
+                <div class="img-wrap"><img src=${res[key].imgsrc}></div>
+                <figcaption class="info-wrap">
+                        <h4 class="title">${res[key].title}</h4>
+                        <p class="desc">${res[key].desc}</p>
+                        <div class="rating-wrap">
+                            <div class="label-rating">${res[key].rating}</div>
+                            <div class="label-order">${res[key].order} </div>
+                        </div>
+                </figcaption>
+                <div class="bottom-wrap">
+                    <a href="" id='${key}' class="btn btn-sm btn-primary float-right">Order Now</a>	
+                    <div class="price-wrap h5">
+                        <span class="price-new">${res[key].price}</span><del class="price-old">${res[key].oldprice}</del>
+                    </div> 
+                </div>
+            </figure>
+            </div>`
+            $('.row').append(pizzaDetails)
+      });        
+}  
+
+$("body").on("click", "a", function(e) { e.preventDefault()
+    var productId = $(this).attr('id');
+    alert(productId);
+    if(productId != '')
+    window.location.href="details.html?" +productId });
+
+})
+
+</script>
+</body>
+
+</html>

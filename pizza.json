@@ -1,0 +1,62 @@
+[
+    {
+        "imgsrc":"images/pizza_one.jpg",
+        "id":"Pizza-one",
+        "title":"Another name of item",
+        "desc":"Some small description goes here",
+        "rating":"132 reviews",
+        "order":"154 orders",
+        "oldprice":"$576",
+        "price":"$376"
+    },
+    {
+        "imgsrc":"images/pizza_two.jpg",
+        "id":"Pizza-one",
+        "title":"Another name of item",
+        "desc":"Some small description goes here",
+        "rating":"132 reviews",
+        "order":"154 orders",
+        "oldprice":"$476",
+        "price":"$676"
+    },
+    {
+        "imgsrc":"images/pizza_three.jpg",
+        "id":"Pizza-one",
+        "title":"Another name of item",
+        "desc":"Some small description goes here",
+        "rating":"132 reviews",
+        "order":"154 orders",
+        "oldprice":"$576",
+        "price":"$476"
+    },
+    {
+        "imgsrc":"images/pizza_one.jpg",
+        "id":"Pizza-one",
+        "title":"Another name of item",
+        "desc":"Some small description goes here",
+        "rating":"132 reviews",
+        "order":"154 orders",
+        "oldprice":"$676",
+        "price":"$176"
+    },
+    {
+        "imgsrc":"images/pizza_two.jpg",
+        "id":"Pizza-one",
+        "title":"Another name of item",
+        "desc":"Some small description goes here",
+        "rating":"132 reviews",
+        "order":"154 orders",
+        "oldprice":"$976",
+        "price":"$376"
+    },
+    {
+        "imgsrc":"images/pizza_three.jpg",
+        "id":"Pizza-one",
+        "title":"Another name of item",
+        "desc":"Some small description goes here",
+        "rating":"132 reviews",
+        "order":"154 orders",
+        "oldprice":"$876",
+        "price":"$276"
+    }
+]
